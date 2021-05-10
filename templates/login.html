@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block nav %}LOgin{% endblock %}
+{% block title %} Login Page {% endblock %}
+
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+			<p>{{msg}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+ <!--action es lo que pasa luego de que termina el formulario se reedirecciona a otra pagina, usando # se le dice que se quede en la misma pagina-->
+	
+<form action="#" method="post">
+	<p>Name:</p>
+	<p><input type="text" name="nombre_input"></p>
+	<p><input type="submit" name="submit"></p>
+
+</form>
+{% endblock %}
