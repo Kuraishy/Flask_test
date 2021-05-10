@@ -2,9 +2,13 @@ from flask import Flask, redirect, url_for, render_template, request, session, f
 import os
 from datetime import timedelta
 from flask_sqlalchemy import SQLAlchemy 
+from second import second
 
 
 app = Flask(__name__)
+app.register_blueprint(second,url_prefix="/admin")#segundo archivo de python 
+# en el que se puede crear en otro prefixo
+
 #se crea una secrt key para las sesiones
 #app.secret_key = "sjfdsjalfjlksdj"
 app.secret_key = str(os.urandom(16))
