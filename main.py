@@ -78,6 +78,7 @@ def user():
 	email = None
 	#si hay una sesion creada redirecciona a la pagina
 	if  "user" in session:
+		
 		user = session["user"]
 		if request.method=="POST": # si el usuario ingresado envia post
 			email = request.form["email"] #obtener el email y guardarlo
